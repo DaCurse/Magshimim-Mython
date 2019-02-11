@@ -63,7 +63,7 @@ Type * Parser::getType(std::string & str)
 	/*const std::regex int_exp("-?[0-9]+");
 	const std::regex bool_exp("true|false");
 	const std::regex str_exp("'([^']+)?'|\"([^\"]+)?\"");*/
-	const std::regex list_exp("\[((-?[0-9]+|True|False|'([^']+)?'|\"([^\"]+)?\"),?)*\]");
+	//const std::regex list_exp("\[((-?[0-9]+|True|False|'([^']+)?'|\"([^\"]+)?\"),?)*\]");
 
 	if (Helper::isInteger(str))
 	{
@@ -80,10 +80,10 @@ Type * Parser::getType(std::string & str)
 		str[str.length() - 1] = '\'';
 		type = new String(str);
 	}
-	else if (std::regex_match(str, list_exp))
+	/*else if (std::regex_match(str, list_exp))
 	{
 
-	}
+	}*/
 	else
 	{
 		type = NULL;
